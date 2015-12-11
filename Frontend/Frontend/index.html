@@ -13,7 +13,7 @@
 		<h1>Livedooh AngularJS and REST project</h1>
 	</div>
 
-	<div ng-controller="TabController as tab">
+	<div class="row" ng-controller="TabCtrl as tab">
 		<section class="tab">
 			<ul class="nav nav-pills">
 				<li ng-class="{ active: tab.isSet(1) }"><a href
@@ -22,24 +22,31 @@
 					ng-click="tab.setTab(2)">Decode</a></li>
 			</ul>
 		</section>
+		<div class="col-md-4">
+			<div ng-show="tab.isSet(1)" ng-controller="EncodeCtrl as encode">
+				<form name="encodeForm" ng-submit="encode.getResult(encode)">
+					<h4>Input text to encode in Base64</h4>
+					<input ng-model="encode" class="form-control"
+						placeholder="add plain text" requiered /> <br> <span
+						class="input-group-addon" id="basic-addon3">{{$scope.encode}}</span>
+					<br>
+					<button ng-disabled="encodeFrom.$invalid" class="btn btn-primary"
+						type="submit"></button>
+				</form>
+			</div>
 
-		<div ng-show="tab.isSet(1)">
-			<form name="encodeForm">
-				<h4>Input text to encode in Base64</h4>
-				<input ng-model="encode" class="form-control"
-					placeholder="add plain text" requiered /> <br>
-			</form>
+			<div ng-show="tab.isSet(2)">
+				<form name="decodeForm" ng-submit="DecodeCtrl as decode">
+					<h4>Input Base64 code to decode in plain text</h4>
+					<input ng-model="decode" class="form-control"
+						placeholder="add code" requiered /> <br> <span
+						class="input-group-addon" id="basic-addon3">{{$scope.decode}}</span>
+					<br>
+					<button ng-disabled="decodeFrom.$invalid" class="btn btn-primary"
+						type="submit"></button>
+				</form>
+			</div>
 		</div>
-
-		<div ng-show="tab.isSet(2)">
-			<form name="decodeForm">
-				<h4>Input Base64 code to decode in plain text</h4>
-				<input ng-model="decode" class="form-control" placeholder="add code"
-					requiered /> <br>
-			</form>
-		</div>
-
-
 	</div>
 </body>
 </html>
