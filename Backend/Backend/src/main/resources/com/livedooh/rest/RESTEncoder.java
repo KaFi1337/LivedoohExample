@@ -5,13 +5,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+@PATH("/encoder")
 public class RESTEncoder {
 	
-	@PATH("/encoder")
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String sayPlainTextHello() {
-		return "Hello Jersey";
+	@Produces(MediaType.APPLICATION_JSON)
+	public String encodeString(JSONObject json) {
+		
 	}
 
 }
