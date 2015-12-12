@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('LivedoohExample', []);
+	var app = angular.module('LivedoohProject', []);
 
 	app.controller('TabCtrl', function() {
 		this.tab = 1;
