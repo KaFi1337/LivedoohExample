@@ -17,10 +17,14 @@
 
 		this.getResult = function(code) {
 
+			var data = {
+				decode : code
+			}
+
 			$http({
 				url : "",
 				method : 'GET',
-				data : code,
+				data : data,
 				header : {
 					"Content-Type" : "application/json; charset=utf-8"
 				}
@@ -33,15 +37,19 @@
 		}
 
 	});
-	
+
 	app.controller('EncodeCtrl', function($http, $scope) {
 
 		this.getResult = function(code) {
 
+			var data = {
+				encode : code
+			}
+
 			$http({
 				url : "",
 				method : 'GET',
-				data : code,
+				data : data,
 				header : {
 					"Content-Type" : "application/json; charset=utf-8"
 				}

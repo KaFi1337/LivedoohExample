@@ -2,50 +2,48 @@
 <html ng-app="LivedoohProject">
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap.min.css"></link>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/angular.min.js"></script>
 <script src="js/app.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link href="css/bootstrap.min.css"></link>
 <title>Livedooh Project</title>
 </head>
 <body>
-	<div class="jumbotron">
-		<h1>Livedooh AngularJS and REST project</h1>
-	</div>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Livedooh AngularJS and REST project</h1>
+		</div>
 
-	<div class="row" ng-controller="TabCtrl as tab">
-		<section class="tab">
-			<ul class="nav nav-pills">
-				<li ng-class="{ active: tab.isSet(1) }"><a href
-					ng-click="tab.setTab(1)">Encode</a></li>
-				<li ng-class="{ active: tab.isSet(2) }"><a href
-					ng-click="tab.setTab(2)">Decode</a></li>
-			</ul>
-		</section>
-		<div class="col-md-4">
-			<div ng-show="tab.isSet(1)" ng-controller="EncodeCtrl as encode">
-				<form name="encodeForm" ng-submit="encode.getResult(encode)">
-					<h4>Input text to encode in Base64</h4>
-					<input ng-model="encode" class="form-control"
-						placeholder="add plain text" requiered /> <br> <span
-						class="input-group-addon" id="basic-addon3">{{$scope.encode}}</span>
-					<br>
-					<button ng-disabled="encodeFrom.$invalid" class="btn btn-primary"
-						type="submit"></button> 
-				</form>
+		<div class="row" ng-controller="TabCtrl as tab">
+			<section class="tab">
+				<ul class="nav nav-pills">
+					<li ng-class="{ active: tab.isSet(1) }"><a href
+						ng-click="tab.setTab(1)">Encode</a></li>
+					<li ng-class="{ active: tab.isSet(2) }"><a href
+						ng-click="tab.setTab(2)">Decode</a></li>
+				</ul>
+			</section>
+
+			<div class="col-md-4">
+				<div ng-show="tab.isSet(1)" ng-controller="EncodeCtrl as encode">
+					<form name="encodeForm" ng-submit="encode.getResult(encode)">
+						<h4>Input text to encode in base64</h4>
+						<input ng-model="encodeForm.encode" typ="text" class="form-control" placeholder="add text"/> <br>
+						<span class="input-group-addon">{{$scope.encode}}</span> <br>
+						<button class="btn btn-primary" type="submit">Encode</button>
+					</form>
+				</div>
+
+				<div ng-show="tab.isSet(2)" ng-controller="DecodeCtrl as decode">
+					<form name="decodeForm" ng-submit="decode.getResult(decode)">
+						<h4>Input base64 code to decode in text</h4>
+						<input ng-model="decodeForm.decode" typ="text" class="form-control" placeholder="add code"/> <br>
+						<span class="input-group-addon">{{$scope.decode}}</span> <br>
+						<button class="btn btn-primary" type="submit">Decode</button>
+					</form>
+				</div>
 			</div>
 
-			<div ng-show="tab.isSet(2)">
-				<form name="decodeForm" ng-submit="DecodeCtrl as decode">
-					<h4>Input Base64 code to decode in plain text</h4>
-					<input ng-model="decode" class="form-control"
-						placeholder="add code" requiered /> <br> <span
-						class="input-group-addon" id="basic-addon3">{{$scope.decode}}</span>
-					<br>
-					<button ng-disabled="decodeFrom.$invalid" class="btn btn-primary"
-						type="submit"></button>
-				</form>
-			</div>
 		</div>
 	</div>
 </body>
