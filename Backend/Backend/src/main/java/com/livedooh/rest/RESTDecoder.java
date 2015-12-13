@@ -21,9 +21,7 @@ public class RESTDecoder {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String decodeString(JSONObject json) {
-		
-		return dec.decode(json.getString(""));
-		
+		return dec.decode(json.getString("decode"));
 	}
 	
 }

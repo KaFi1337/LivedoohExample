@@ -21,9 +21,7 @@ public class RESTEncoder {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String encodeString(JSONObject json) {
-
-		return en.encode(json.getString(""));
-
+		return en.encode(json.getString("encode"));
 	}
 
 }
