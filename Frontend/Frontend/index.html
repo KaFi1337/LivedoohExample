@@ -29,16 +29,16 @@
 					<form name="encodeForm" ng-submit="encode.getResult(encode)">
 						<h4>Input text to encode in base64</h4>
 						<input ng-model="encodeForm.encode" typ="text" class="form-control" placeholder="add text"/> <br>
-						<span class="input-group-addon">{{$scope.encode}}</span> <br>
+						<span ng-show="$scope.encode === null" class="input-group-addon">{{$scope.encode}}</span> <br>
 						<button class="btn btn-primary" type="submit">Encode</button>
 					</form>
 				</div>
 
 				<div ng-show="tab.isSet(2)" ng-controller="DecodeCtrl as decode">
 					<form name="decodeForm" ng-submit="decode.getResult(decode)">
-						<h4>Input base64 code to decode in text</h4>
+						<h4>Input base64 code to decode</h4>
 						<input ng-model="decodeForm.decode" typ="text" class="form-control" placeholder="add code"/> <br>
-						<span class="input-group-addon">{{$scope.decode}}</span> <br>
+						<span  ng-show="$scope.decode === null" class="input-group-addon">{{$scope.decode}}</span> <br>
 						<button class="btn btn-primary" type="submit">Decode</button>
 					</form>
 				</div>
