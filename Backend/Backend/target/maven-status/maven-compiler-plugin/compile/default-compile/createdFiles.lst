@@ -1,0 +1,4 @@
+com\livedooh\encoder\Encoder.class
+com\livedooh\rest\RESTEncoder.class
+com\livedooh\rest\RESTDecoder.class
+com\livedooh\decoder\Decoder.class
