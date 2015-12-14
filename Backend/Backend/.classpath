@@ -29,5 +29,6 @@
 	<classpathentry kind="lib" path="C:/Users/Kai/AppData/Local/Microsoft/Windows/INetCache/IE/ET7KYQP8/jersey-container-servlet-core[1].jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kai/AppData/Local/Microsoft/Windows/INetCache/IE/PYNHWZVW/jersey-media-jaxb[1].jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kai/AppData/Local/Microsoft/Windows/INetCache/IE/VEGL68HJ/jersey-server[1].jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
