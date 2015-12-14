@@ -22,7 +22,7 @@
 			}
 
 			$http({
-				url : "",
+				url : "http://localhost:8080/Backend/rest/decode",
 				method : 'GET',
 				data : data,
 				header : {
@@ -47,7 +47,7 @@
 			}
 
 			$http({
-				url : "",
+				url : "http://localhost:8080/Backend/rest/encode",
 				method : 'GET',
 				data : data,
 				header : {
